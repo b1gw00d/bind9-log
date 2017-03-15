@@ -1,0 +1,6 @@
+logging {
+    channel query_log {
+    file "/var/log/named/query.log";
+    severity info;
+};
+category queries { query_log; };
