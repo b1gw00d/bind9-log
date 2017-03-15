@@ -8,7 +8,7 @@ try:
     log_file = str(sys.argv[1])
 except IndexError:
     print ("")
-    print ("usage: python nagios_object.py [txt_file]")
+    print ("usage: python3 log2db.py [txt_file]")
     print ("")
     sys.exit(0)
 
