@@ -33,6 +33,6 @@ define_template = jenv.get_template("templates/template.html")
 
 jinja_file = define_template.render(list=query_values)
 
-w = open("log.html", "w")
+w = open("bind_log.html", "w")
 w.write(jinja_file)
 w.close()

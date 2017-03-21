@@ -26,7 +26,7 @@ for line in open_file.readlines():
 
 open_file.close()
 
-conn = sqlite3.connect("database/dns.sqlite3")
+conn = sqlite3.connect("database/bind_log.db")
 
 conn.executemany("INSERT INTO queries "
                 "(query_date, query_time, query_src, query_type, query) "
