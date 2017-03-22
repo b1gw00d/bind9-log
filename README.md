@@ -5,6 +5,18 @@
     jinja2 (only for log2html.py)
 
 ## Usage:
+
+    Bind9:
+
+        Add those lines to your bind config:
+        
+        logging {
+                    channel query_log {
+                    file "/var/log/named/query.log";
+                    severity info;
+        };
+        category queries { query_log; };
+
     HTML:
     
         python3 log2html.py [query log file] [output html file]
