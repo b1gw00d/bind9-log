@@ -6,9 +6,11 @@ import jinja2
 
 try:
     log_file = str(sys.argv[1])
+    html_file = str(sys.argv[2])
+
 except IndexError:
     print ("")
-    print ("usage: python3 log2html.py [txt_file]")
+    print ("usage: python3 log2html.py [query log file] [output html file]")
     print ("")
     sys.exit(0)
 
@@ -33,6 +35,6 @@ define_template = jenv.get_template("templates/template.html")
 
 jinja_file = define_template.render(list=query_values)
 
-w = open("bind_log.html", "w")
+w = open(html_file, "w")
 w.write(jinja_file)
 w.close()

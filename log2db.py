@@ -6,9 +6,10 @@ import sqlite3
 
 try:
     log_file = str(sys.argv[1])
+    db_file = str(sys.argv[2])
 except IndexError:
     print ("")
-    print ("usage: python3 log2db.py [txt_file]")
+    print ("usage: python3 log2db.py [query log file] [output db]")
     print ("")
     sys.exit(0)
 
@@ -26,7 +27,12 @@ for line in open_file.readlines():
 
 open_file.close()
 
-conn = sqlite3.connect("database/bind_log.db")
+if not os.path.exists("database"):
+    os.makedirs("database")
+
+database = "database/%s" % (db_file)
+
+conn = sqlite3.connect(database)
 
 conn.executemany("INSERT INTO queries "
                 "(query_date, query_time, query_src, query_type, query) "
