@@ -24,6 +24,6 @@
 
     SQLite3:
 
-        sqlite3 database_name
+        sqlite3 database name
         sqlite> .read database/create_db.sql
-        python3 log2db.py [query log file] [output db]
+        python3 log2db.py [query log file] [database name]
